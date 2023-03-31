@@ -2,6 +2,7 @@
 
 # The source file path and the target directory
 SOURCE_FILE_PATH="$1"
+#TODO: replace with actual path to react-tools/src
 TARGET_DIR=~/development/react-tools/src
 
 if [ -z "$SOURCE_FILE_PATH" ]; then
@@ -37,7 +38,8 @@ if [ -f "$SOURCE_TEST_FILE_PATH" ]; then
   }
 fi
 
-python3 /home/laughingwhales/development/react-tools/update_package_json.py "$TARGET_DIR/$FILENAME_WITH_EXT" "$TARGET_TEST_FILE_PATH"
+#TODO: replace with actual path to react-tools
+python3 ~/development/react-tools/update_package_json.py "$TARGET_DIR/$FILENAME_WITH_EXT" "$TARGET_TEST_FILE_PATH"
 
 
 # Change to the target directory
