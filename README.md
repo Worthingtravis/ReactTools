@@ -1,46 +1,118 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Tools
 
-## Available Scripts
+This repository serves two purposes:
+- Quickly push code from one repo to another for sharing or display purposes using provided scripts. You can also set up the copy_to_react_tools.sh script as an external tool in WebStorm for even easier use.
+- Access a collection of reusable React components for use in your own projects.
+#
 
-In the project directory, you can run:
+---
+## Getting Started
 
-### `npm start`
+### Clone the repository
+`git clone https://github.com/worthingtravis/react-tools.git`
+### Change into the react-tools directory
+`cd react-tools`
+### Install dependencies
+`npm install`
+### Optionally, run tests
+`npm test`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Use in webstorm
+Open WebStorm and go to "File" > "Settings".
+- In the left sidebar, select `"Tools" > "External Tools"`.
+- Click on the `+` icon to add a new tool.
+- In the `Name` field, `enter a name for the tool (e.g. "Copy to React Tools")`.
+- In the `Program` field, enter the path to the `copy_to_react_tools.sh` script.
+- In the `Arguments` field, enter the following:`$FilePath$`
+- In the `Working directory` field, enter the path to the `react-tools` directory.
+- Click on `OK` to save the tool.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Now you can use this tool to quickly copy files to the "react-tools" repository. To use it, right-click on the file you want to copy in the project tree, select "External Tools" > "Copy to React Tools" from the context menu, and the script will be executed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Use in vscode
+- Open your project in VSCode.
+- Open the Command Palette by pressing `Ctrl + Shift + P` on Windows/Linux or `Cmd + Shift + P` on Mac.
 
-### `npm run eject`
+- Search for `Tasks: Configure Task` and select it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- In the task configuration prompt, select `Create tasks.json file from template` and then select` "Others"`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- This will create a tasks.json file in the .vscode directory.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Replace the contents of the tasks.json file with the following:
 
-## Learn More
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Copy to React Tools",
+            "type": "shell",
+            "command": "sh ${workspaceFolder}/copy_to_react_tools.sh ${file}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Save the tasks.json file.
+```
+Right-click on the file you want to copy in the Explorer pane and select "Run Task" from the context menu.
+
+Select "Copy to React Tools" from the list of tasks.
+
+The script will be executed and the file will be copied to the src directory in the react-tools repo, any imported packages will be added to the package.json file, and the changes will be committed to a new branch.
+```
+### Copying files and adding packages
+
+The `copy_to_react_tools.sh` script is used to copy files to the `src` directory in the `react-tools` repo, add any imported packages to the `package.json` file, and commit the changes to a new branch. To use the script, run:
+
+./copy_to_react_tools.sh <source_file_path>
+
+
+You can also include a test file path:
+
+./copy_to_react_tools.sh <source_file_path> <test_file_path>
+
+
+### Adding packages only
+
+If you want to add packages to the `package.json` file without copying any files, you can use the `add_packages_script.sh` script:
+
+./add_packages_script.sh <source_file_path>
+
+
+### Updating package.json only
+
+To update the `package.json` file with any imported packages from a file, use the `update_package_json.py` script:
+
+python3 update_package_json.py <source_file_path>
+
+
+You can also include a test file path:
+
+python3 update_package_json.py <source_file_path> <test_file_path>
+
+
+## Contributing
+
+Contributions are welcome! If you find a bug or have a suggestion for a new feature, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

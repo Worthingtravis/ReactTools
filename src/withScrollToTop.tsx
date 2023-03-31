@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUp } from '@/components/Icons';
 
 // withScrollToTop is a higher-order component (HOC) that adds a scroll-to-top button
 // to the wrapped component based on the provided configuration.
@@ -64,7 +63,7 @@ const withScrollToTop = (WrappedComponent, config = {}) => {
                 <WrappedComponent {...props} />
                 {showButton && (
                     <button role={'button'} onClick={scrollToTop} style={{ position: 'fixed', bottom: 10, right: 10 }}>
-                        <ArrowUp className="text-secondary-700" fill="white" />
+                        up
                     </button>
                 )}
             </>

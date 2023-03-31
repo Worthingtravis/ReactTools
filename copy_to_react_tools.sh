@@ -89,3 +89,8 @@ git push --set-upstream origin "$FILENAME_NO_EXT" || {
   echo "Failed to push the branch to the remote repository."
   exit 1
 }
+
+git checkout master || {
+  echo "Failed to switch to the master branch."
+  exit 1
+}
