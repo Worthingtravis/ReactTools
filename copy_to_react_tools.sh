@@ -92,7 +92,7 @@ git push --set-upstream origin "$FILENAME_NO_EXT" || {
   exit 1
 }
 
-git checkout master || {
-  echo "Failed to switch to the master branch."
+git checkout main || {
+  echo "Failed to switch to the main branch."
   exit 1
 }
