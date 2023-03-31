@@ -48,6 +48,10 @@ cd ~/development/react-tools || {
 
 # Check if the current branch is clean
 if ! git diff-index --quiet HEAD --; then
+  echo "Current directory:"
+  pwd
+  echo "Git status:"
+  git status
   echo "The current branch has uncommitted changes. Please commit or stash them before running this script."
   exit 1
 fi

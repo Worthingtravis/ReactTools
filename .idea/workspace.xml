@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="882b387b-8c86-4686-a6c9-cae4b71f1020" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/update_package_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copy_to_react_tools.sh" beforeDir="false" afterPath="$PROJECT_DIR$/copy_to_react_tools.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680298262804</updated>
-      <workItem from="1680298263894" duration="2574000" />
+      <workItem from="1680298263894" duration="2987000" />
     </task>
     <servers />
   </component>

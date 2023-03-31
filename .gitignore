@@ -27,3 +27,4 @@ build/
 .cache/
 *.log
 .idea/
+.idea/workspace.xml
