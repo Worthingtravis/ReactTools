@@ -2,9 +2,17 @@
 # React Tools
 
 This repository serves two purposes:
-- Quickly push code from one repo to another for sharing or display purposes using provided scripts. You can also set up the copy_to_react_tools.sh script as an external tool in WebStorm for even easier use.
-- Access a collection of reusable React components for use in your own projects.
+- set up the copy_to_react_tools.sh script as an external tool in WebStorm or VScode for easy use.
+- Access a collection of reusable React components/hooks/HOC's for use in your own projects.
 #
+
+
+https://user-images.githubusercontent.com/11166509/229248974-a0a571cd-80ac-454a-96e5-1b0ced700346.mp4
+
+
+https://user-images.githubusercontent.com/11166509/229249113-47c3b486-26d2-46d9-b7a3-7de4ae34929d.mp4
+
+
 
 ---
 ## Getting Started
@@ -78,6 +86,9 @@ Select "Copy to React Tools" from the list of tasks.
 
 The script will be executed and the file will be copied to the src directory in the react-tools repo, any imported packages will be added to the package.json file, and the changes will be committed to a new branch.
 ```
+
+--- 
+
 ### Copying files and adding packages
 
 The `copy_to_react_tools.sh` script is used to copy files to the `src` directory in the `react-tools` repo, add any imported packages to the `package.json` file, and commit the changes to a new branch. To use the script, run:
