@@ -78,6 +78,9 @@ Select "Copy to React Tools" from the list of tasks.
 
 The script will be executed and the file will be copied to the src directory in the react-tools repo, any imported packages will be added to the package.json file, and the changes will be committed to a new branch.
 ```
+
+--- 
+
 ### Copying files and adding packages
 
 The `copy_to_react_tools.sh` script is used to copy files to the `src` directory in the `react-tools` repo, add any imported packages to the `package.json` file, and commit the changes to a new branch. To use the script, run:
