@@ -2,8 +2,8 @@
 # React Tools
 
 This repository serves two purposes:
-- Quickly push code from one repo to another for sharing or display purposes using provided scripts. You can also set up the copy_to_react_tools.sh script as an external tool in WebStorm for even easier use.
-- Access a collection of reusable React components for use in your own projects.
+- set up the copy_to_react_tools.sh script as an external tool in WebStorm or VScode for easy use.
+- Access a collection of reusable React components/hooks/HOC's for use in your own projects.
 #
 
 ---
